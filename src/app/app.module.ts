@@ -7,11 +7,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksComponent } from './compornent/books/books.component';
+import { BookService } from './services/book.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksComponent
+    BooksComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +20,7 @@ import { BooksComponent } from './compornent/books/books.component';
     AngularFireModule.initializeApp(environment.firebase, 'Angular_firebase_Crud'),
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
