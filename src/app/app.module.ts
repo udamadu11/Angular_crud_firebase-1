@@ -8,15 +8,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksComponent } from './compornent/books/books.component';
 import { BookService } from './services/book.service';
+import { AddBookComponent } from './compornent/add-book/add-book.component';
+import {FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponent,
+    AddBookComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'Angular_firebase_Crud'),
     AngularFirestoreModule
   ],
