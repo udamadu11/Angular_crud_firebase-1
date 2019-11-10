@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 export class BookService {
 books : Observable<Book[]>;
 booksCollection: AngularFirestoreCollection<Book>;
+bookDoc: AngularFirestoreDocument<Book>;
   constructor(public afs: AngularFirestore) { 
 
     this.booksCollection = afs.collection<Book>('books');
@@ -27,5 +28,9 @@ booksCollection: AngularFirestoreCollection<Book>;
   }
   addBook(book:Book){
    this.booksCollection.add(book);
+  }
+  deleteBook(books: Book){
+   this.bookDoc = this.afs.doc(`books/${books.id}`);
+   this.bookDoc.delete();
   }
 }

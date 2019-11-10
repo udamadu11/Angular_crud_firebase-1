@@ -17,5 +17,7 @@ export class BooksComponent implements OnInit {
       this.books = books;
     });
   }
-
+deleteBook($event,book: Book){
+  this.bookService.deleteBook(book);
+}
 }
