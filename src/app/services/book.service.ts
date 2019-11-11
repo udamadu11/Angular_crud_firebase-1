@@ -29,8 +29,12 @@ bookDoc: AngularFirestoreDocument<Book>;
   addBook(book:Book){
    this.booksCollection.add(book);
   }
-  deleteBook(books: Book){
-   this.bookDoc = this.afs.doc(`books/${books.id}`);
+  deleteBook(book: Book){
+   this.bookDoc = this.afs.doc(`books/${book.id}`);
    this.bookDoc.delete();
+  }
+  updateBook(book:Book){
+    this.bookDoc = this.afs.doc(`books/${book.id}`);
+    this.bookDoc.update(book);
   }
 }

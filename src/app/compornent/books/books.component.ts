@@ -10,6 +10,9 @@ import { Book } from '../../models/book';
 export class BooksComponent implements OnInit {
 
   books: Book[];
+  
+  editState: boolean = false;
+  bookToEdit : Book;
   constructor(public bookService: BookService) { }
 
   ngOnInit() {
@@ -17,7 +20,14 @@ export class BooksComponent implements OnInit {
       this.books = books;
     });
   }
-deleteBook($event,book: Book){
+deleteBook(event,book: Book){
   this.bookService.deleteBook(book);
+}
+editBook(event,book: Book){
+  this.editState = true;
+  this.bookToEdit = book;
+}
+updateBook(book: Book){
+  this.bookService.updateBook(book);
 }
 }
