@@ -34,7 +34,7 @@ import { DashboardComponent } from './compornent/dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase, 'Angular_firebase_Crud'),
+    AngularFireModule.initializeApp(environment.firebase, 'Angular-firebase-Crud'),
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
